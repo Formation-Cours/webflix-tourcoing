@@ -29,6 +29,6 @@ public class ProfileEntity {
 	@ManyToOne(optional = false)
 	private UserEntity user;
 
-	@ManyToMany
+	@OneToMany(mappedBy = "video")
 	private Collection<VideoProfileEntity> videos;
 }
