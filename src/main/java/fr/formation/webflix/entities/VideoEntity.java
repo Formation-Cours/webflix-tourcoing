@@ -36,6 +36,17 @@ public class VideoEntity {
 	private Calendar datePublished;
 	private Calendar dateDeleted;
 
-	@ManyToMany(mappedBy = "videos")
-	private Collection<ProfileEntity> profiles;
+	@OneToMany(mappedBy = "id.videoId")
+	private Collection<VideoProfileEntity> profiles;
+
+	@ManyToOne(optional = false)
+	private CategoryEntity category;
+
+	@ManyToMany
+	@JoinTable(
+			name = "video_actor",
+			joinColumns = @JoinColumn(name = "video_id"),
+			inverseJoinColumns = @JoinColumn(name = "actor_id")
+	)
+	private Collection<ActorEntity> actors;
 }
