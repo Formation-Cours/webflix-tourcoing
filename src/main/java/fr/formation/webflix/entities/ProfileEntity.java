@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,5 +30,5 @@ public class ProfileEntity {
 	private UserEntity user;
 
 	@ManyToMany
-	private Collection<VideoEntity> videos;
+	private Collection<VideoProfileEntity> videos;
 }
