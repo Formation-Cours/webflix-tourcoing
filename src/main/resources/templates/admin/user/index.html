@@ -12,6 +12,7 @@
         <th>Genre</th>
         <th>Email</th>
         <th>Mot de passe</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -19,6 +20,8 @@
         <td th:text="${u.gender}"></td>
         <td th:text="${u.email}"></td>
         <td th:text="${u.password}"></td>
+<!--        <td><a th:href="@{'/admin/users/' + ${u.id}}">detail</a></td>-->
+        <td><a th:href="@{/admin/users/{id}(id=${u.id})}">detail</a></td>
     </tr>
     </tbody>
 </table>

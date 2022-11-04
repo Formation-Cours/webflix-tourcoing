@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/admin/users/add" method="post" data-th-object="${userEntity}">
+    <div>
+        <label data-th-for="email">Email</label>
+        <input type="email"
+               data-th-field="*{email}"
+               placeholder="sam@sam.fr"
+               required
+        >
+    </div>
+    <div>
+        <label data-th-for="password">Mot de passe</label>
+        <input type="text"
+               data-th-field="*{password}"
+        >
+    </div>
+    <div>
+        <label data-th-for="firstname">Prénom</label>
+        <input type="text"
+               data-th-field="*{firstname}"
+        >
+    </div>
+    <div>
+        <label data-th-for="lastname">Nom</label>
+        <input type="text"
+               data-th-field="*{lastname}"
+               id="lastname"
+        >
+    </div>
+    <div>
+        <button type="submit">Valider</button>
+        <button type="reset">Effacer</button>
+    </div>
+</form>
+</body>
+</html>

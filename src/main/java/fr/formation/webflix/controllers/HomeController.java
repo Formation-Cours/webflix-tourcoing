@@ -1,13 +1,14 @@
 package fr.formation.webflix.controllers;
 
 import fr.formation.webflix.entities.UserEntity;
+import fr.formation.webflix.enums.Gender;
 import fr.formation.webflix.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Calendar;
 import java.util.Optional;
 
 @Controller
@@ -42,5 +43,23 @@ public class HomeController {
 			return "admin/user/detail.html";
 		}
 		return "error_404.html";
+	}
+
+	@GetMapping("/admin/users/add")
+	public String adminUserAdd(UserEntity userEntity){
+		System.out.println("Je suis dans mon GET");
+		return "admin/user/add.html";
+	}
+
+//	@RequestMapping(value = "/admin/users/add", method = RequestMethod.POST)
+	@PostMapping("/admin/users/add")
+	public String adminUserAddPost(UserEntity userEntity){
+		System.out.println("Je suis dans mon POST");
+		userEntity.setCountry("France");
+		userEntity.setGender(Gender.MR);
+		userEntity.setDateCreated(Calendar.getInstance());
+
+		userService.save(userEntity);
+		return "admin/user/add.html";
 	}
 }
