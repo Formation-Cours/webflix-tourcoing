@@ -5,6 +5,8 @@ import fr.formation.webflix.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Optional;
 
 @Service
@@ -23,5 +25,9 @@ public class UserService {
 
 	public Optional<UserEntity> findById(Long id) {
 		return userRepository.findById(id);
+	}
+
+	public void deleteAll() {
+		userRepository.deleteAll();
 	}
 }
