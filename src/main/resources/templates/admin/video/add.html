@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Admin</title>
+</head>
+<body>
+<div class="container">
+    <form action="/admin/video/add" method="post" class="my-5">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom de la vidéo</label>
+            <input type="text" class="form-control is-invalid" id="name" name="name" required>
+
+            <div class="invalid-feedback">
+                Choisir le nom pour la vidéo
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Durée</label>
+            <input type="number" class="form-control is-invalid" id="duration" name="duration" aria-describedby="duration-help" required>
+            <div id="duration-help" class="form-text">Mettre en seconde la durée de la vidéo</div>
+
+            <div class="invalid-feedback">
+                Aucune durée n'est indiquée
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="originCountry" class="form-label">Pays d'origine</label>
+            <input type="text" class="form-control" id="originCountry" required>
+
+            <div class="invalid-feedback">
+                Il manque le pays d'origine
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="synopsis" class="form-label">Synopsis</label>
+            <textarea class="form-control" id="synopsis" name="synopsis" rows="10" required></textarea>
+
+            <div class="invalid-feedback">
+                Un film qui ne raconte rien n'existe pas 🥹
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="video-bin">Video</label>
+            <input type="file" class="form-control" id="video-bin" name="video-bin"
+                   accept="video/*"
+                   aria-describedby="url-video-help" required>
+            <div id="url-video-help" class="form-text">Formats acceptés : MP4 | MKV | AVCHD | WebM</div>
+
+            <div class="invalid-feedback">
+                Si tu enregistres une vidéo, il faut bien mettre un fichier 🥹
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="cover-bin">Photo de couverture</label>
+            <input type="file" class="form-control" id="cover-bin" name="cover-bin"
+                   accept="image/jpeg, image/png"
+                   aria-describedby="url-cover-help" required>
+            <div id="url-cover-help" class="form-text">Formats acceptés : PNG | JPEG | JPG</div>
+
+            <div class="invalid-feedback">
+                Pas très jolie sans image 🥹
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="productYear" class="form-label">Année de production</label>
+            <input type="number" class="form-control" id="productYear" name="productYear" min="1900" max="2100" required>
+
+            <div class="invalid-feedback">
+                Il a bien été créé afin de sortir en salle (ou ailleurs)
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="datePublished" class="form-label">Date et heure, publication de la vidéo</label>
+            <input type="datetime-local" class="form-control" id="datePublished" name="datePublished">
+        </div>
+        <div class="mb-3">
+            <label for="dateDeleted" class="form-label">Date et heure, suppression de la vidéo</label>
+            <input type="datetime-local" class="form-control" id="dateDeleted" name="dateDeleted">
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Catégorie de la vidéo</label>
+            <select class="form-select" name="category" id="category" required>
+                <option selected>Choisir la catégorie</option>
+                <option value="1">Comédie</option>
+                <option value="2">Science-fiction</option>
+            </select>
+
+            <div class="invalid-feedback">
+                Autant un film peut avoir plusieurs catégories mais aucune, cela me surprendrait.
+            </div>
+        </div>
+        <div class="row justify-content-evenly">
+            <button type="submit" class="btn btn-primary col-4">Envoyer</button>
+            <button type="reset" class="btn btn-warning col-4">Réinitialiser</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!--
+	private Long id;
+	private String name;
+	private Integer duration;
+	private String originCountry;
+	private String synopsis;
+	private String urlVideo;
+	private String cover;
+	private Integer productYear;
+
+	private Calendar datePublished;
+	private Calendar dateDeleted;
+
+	private CategoryEntity category;
+-->

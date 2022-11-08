@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Admin</title>
+</head>
+<body>
+<div class="container">
+    <form action="/admin/cat/add" method="post" class="row align-items-center my-3 justify-content-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <input type="text" class="form-control" name="name"
+                   style="width: 100%"
+                   placeholder="Nom de la catégorie">
+            <div class="invalid-feedback">
+                Un champ!! Tu es sérieux ?? Rempli le, avant de vouloir l'ajouter!
+            </div>
+            <button type="submit" class="btn btn-primary col-2 ms-3">Ajouter</button>
+        </div>
+    </form>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Comédie</td>
+            <td class="">
+                <div class="align-items-center align-content-center">
+                    <a href="/admin/cat/1" class="mx-2"><i class="bi bi-eye" style="font-size: 1.5rem;"></i></a>
+                    <a href="/admin/cat/1/update" class="mx-2"><i class="bi bi-pencil-square"
+                                                                  style="font-size: 1.5rem;"></i></a>
+                    <a href="/admin/cat/1/delete" class="mx-2"><i class="bi bi-trash-fill"
+                                                                  style="font-size: 1.5rem;"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Science-fiction</td>
+            <td class="">
+                <div class="align-items-center align-content-center">
+                    <a href="/admin/cat/2" class="mx-2"><i class="bi bi-eye" style="font-size: 1.5rem;"></i></a>
+                    <a href="/admin/cat/2/update" class="mx-2"><i class="bi bi-pencil-square"
+                                                                  style="font-size: 1.5rem;"></i></a>
+                    <a href="/admin/cat/2/delete" class="mx-2"><i class="bi bi-trash-fill"
+                                                                  style="font-size: 1.5rem;"></i></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+</html>
