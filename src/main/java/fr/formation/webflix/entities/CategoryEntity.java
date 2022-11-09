@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Collection;
 
 @Data
@@ -17,6 +18,7 @@ public class CategoryEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Pattern(regexp = "\\w{2,100}", flags = {Pattern.Flag.CASE_INSENSITIVE, Pattern.Flag.DOTALL})
 	@Column(nullable = false, length = 100)
 	private String name;
 

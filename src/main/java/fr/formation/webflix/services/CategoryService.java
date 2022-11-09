@@ -14,4 +14,12 @@ public class CategoryService {
     public Iterable<CategoryEntity> findAll() {
         return categoryRepository.findAll();
     }
+
+    public CategoryEntity save(CategoryEntity category){
+        return categoryRepository.save(category);
+    }
+
+    public void deleteById(Long id){
+        categoryRepository.deleteById(id);
+    }
 }

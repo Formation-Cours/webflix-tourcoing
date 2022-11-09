@@ -66,6 +66,7 @@ public class AdminVideoController {
             return formGet(videoEntity, model);
         }
 
+
         try {
             videoBin.transferTo(
                     new File("/Users/olprog/IdeaProjects/webflix/src/main/resources/static/files/" + videoBin.getOriginalFilename()));
