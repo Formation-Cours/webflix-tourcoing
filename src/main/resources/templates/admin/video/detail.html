@@ -22,44 +22,41 @@
 <body>
 <div class="container d-flex">
     <div class="col-4 my-5">
-            <img src="/static/images/covers/fLDFor3Rl5TWFIZuVgewQ17gEPf.jpg" alt="" class="img-fluid">
+            <img data-th-src="|/files/${video.cover}|" alt="" class="img-fluid">
     </div>
     <div class="col-1"></div>
     <div class="col-7">
         <div>
             <div class="my-5">
-                <iframe class="col-12" style="aspect-ratio: 16/9" src="https://www.youtube.com/embed/HQkjZuCkOt8"
-                        title="BLACK PANTHER 2: WAKANDA FOREVER Trailer International (2022)" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                <video style="width: 100%;height: auto" data-th-src="|/files/${video.urlVideo}|" autoplay loop controls></video>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Titre</div>
-                <div>Black Panther : Wakanda Forever</div>
+                <div data-th-text="${video.name}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Durée</div>
-                <div>2h 41m</div>
+                <div data-th-text="${video.duration}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Origine</div>
-                <div>Anglais</div>
+                <div data-th-text="${video.originCountry}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Date de production</div>
-                <div>2022</div>
+                <div  data-th-text="${video.productYear}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Synopsis</div>
-                <div style="text-align: right">Après la mort du roi T'Challa alias Black Panther, le Wakanda est en deuil et Ramonda a repris le siège royal avec l'aide de sa fille Shuri, des Dora Milaje, Okoye, Ayo et de M'Baku. Cependant, quand Namor, roi de Talocan, déclare la guerre à la nation, les personnages que nous connaissons vont devoir s'allier à de nouvelles personnes, comme Riri Williams mais aussi à d'anciennes connaissances pour vaincre cette menace.</div>
+                <div style="text-align: right"  data-th-text="${video.synopsis}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Date de publication</div>
-                <div>08 / 11 / 22</div>
+                <div data-th-text="${#calendars.format(video.datePublished, 'dd-MM-yyyy')}"></div>
             </div>
             <div class="row-perso d-flex flex-wrap justify-content-between">
                 <div>Date de suppresion</div>
-                <div>31 / 12 / 22</div>
+                <div data-th-text="${#calendars.format(video.dateDeleted, 'dd-MM-yyyy')}"></div>
             </div>
         </div>
     </div>
