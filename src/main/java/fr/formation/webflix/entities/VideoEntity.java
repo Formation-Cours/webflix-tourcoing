@@ -2,6 +2,7 @@ package fr.formation.webflix.entities;
 
 
 import ch.qos.logback.core.joran.spi.NoAutoStart;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -54,12 +55,15 @@ public class VideoEntity {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Calendar dateDeleted;
 
+
 	@OneToMany(mappedBy = "video")
 	private Collection<VideoProfileEntity> profiles;
 
+	@JsonBackReference
 	@ToString.Exclude
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	private CategoryEntity category;
+
 
 	@ManyToMany
 	@JoinTable(

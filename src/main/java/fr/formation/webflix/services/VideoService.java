@@ -17,11 +17,22 @@ public class VideoService {
         return videoRepository.findAll();
     }
 
+    public Iterable<VideoEntity> findAllByDateDeletedIsNull() {
+        return videoRepository.findAllByDateDeletedIsNull();
+    }
+
     public VideoEntity save(VideoEntity videoEntity) {
         return videoRepository.save(videoEntity);
     }
 
     public Optional<VideoEntity> findById(Long id) {
         return videoRepository.findById(id);
+    }
+    public Optional<VideoEntity> findByIdAndDateDeletedIsNull(Long id) {
+        return videoRepository.findByIdAndDateDeletedIsNull(id);
+    }
+
+    public void deleteById(Long id) {
+        videoRepository.deleteById(id);
     }
 }
