@@ -19,7 +19,7 @@ public class CategoryEntity {
 	private Long id;
 
 	@Pattern(regexp = "\\w{2,100}", flags = {Pattern.Flag.CASE_INSENSITIVE, Pattern.Flag.DOTALL})
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, length = 100, unique = true)
 	private String name;
 
 	@OneToMany(mappedBy = "category")
